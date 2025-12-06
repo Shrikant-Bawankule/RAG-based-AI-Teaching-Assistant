@@ -1,18 +1,77 @@
-# How to use this RAG AI Teaching assistant on your own data
-## Step 1 - Collect your videos
-Move all your video files to the videos folder
+# 🎓 RAG-based AI Teaching Assistant  
+A GenAI-powered learning assistant that transcribes, indexes, and retrieves lecture content using Whisper ASR + Embeddings + LLMs.
 
-## Step 2 - Convert to mp3
-Convert all the video files to mp3 by ruunning video_to_mp3
+---
 
-## Step 3 - Convert mp3 to json 
-Convert all the mp3 files to json by ruunning mp3_to_json
+## 🚀 Project Overview
+This project transforms long lecture videos into an interactive AI assistant capable of:
+- Transcribing content into structured text (with timestamps)
+- Searching concepts via semantic retrieval (not keyword-based)
+- Providing accurate, contextual responses powered by LLMs
+- Allowing learners to jump directly to exact lecture moments
 
-## Step 4 - Convert the json files to Vectors
-Use the file preprocess_json to convert the json files to a dataframe with Embeddings and save it as a joblib pickle
+Designed to improve student learning by enabling fast discovery of relevant information.
 
-## Step 5 - Prompt generation and feeding to LLM
+---
 
-Read the joblib file and load it into the memory. Then create a relevant prompt as per the user query and feed it to the LLM
+## 🧠 Key Features
+✔ Automatic speech-to-text using **Whisper**  
+✔ Context-aware answer generation using **RAG Pipeline**  
+✔ Semantic search using **Embeddings + Vector Similarity**  
+✔ Timestamp navigation for transparent learning  
+✔ Clean UI for query interaction  
+✔ Scalable for any educational content  
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+A[Video Input] --> B[Whisper Transcription]
+B --> C[Chunk + Metadata Assignment]
+C --> D[Embedding Generation]
+D --> E[Vector Store Search]
+E --> F[LLM Contextual Response Generation]
+F --> UI[User Interface]
+🛠️ Tech Stack
+Category	Tools
+ASR	OpenAI Whisper
+LLM + RAG	LangChain / Llama-based / GPT-based
+Vector Search	FAISS or ChromaDB
+Interface	Streamlit
+Dev Tools	Python, Pandas, NumPy, Joblib
+Cloud Execution	Google Colab
+
+📊 Workflow Steps
+1️⃣ Extract Audio from lecture videos
+2️⃣ Whisper Model → generate text + timestamps
+3️⃣ Chunk + Metadata Storage
+4️⃣ Embeddings Generation for semantic matching
+5️⃣ Top-k Retriever to fetch relevant lecture segments
+6️⃣ LLM Generates Final Response with citations
+
+📈 Example Use Cases
+🎯 Ask: "What is Precision and Recall?"
+🤖 AI responds with summary + timestamp to jump right into video
+📌 Improves revision speed and content accessibility
 
 
+📂 Folder Structure
+bash
+Copy code
+├── data/                     # raw & processed transcripts
+├── embeddings/               # vector DB storage
+├── notebooks/                # experimentation notebooks
+├── app/streamlit_app.py      # final deployed interface
+├── utils/                    # helper modules
+└── README.md
+💡 Future Improvements
+🔹 Multi-video indexing
+🔹 User profile-based personalization
+🔹 MCQs and quiz generation
+🔹 GPU-based inference for faster search
+🔹 Dashboard for lecture progress analytics
+
+🙌 Contributors
+👤 Shrikant Bawankule
