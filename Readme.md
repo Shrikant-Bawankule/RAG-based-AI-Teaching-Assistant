@@ -1,77 +1,47 @@
-# 🎓 RAG-based AI Teaching Assistant  
-A GenAI-powered learning assistant that transcribes, indexes, and retrieves lecture content using Whisper ASR + Embeddings + LLMs.
+# 🎓 RAG-Based AI Teaching Assistant
 
----
+A GenAI-powered learning assistant that converts lecture videos into an intelligent Q&A system using Whisper ASR for transcription and RAG (Retrieval-Augmented Generation) for accurate, context-aware responses.
 
-## 🚀 Project Overview
-This project transforms long lecture videos into an interactive AI assistant capable of:
-- Transcribing content into structured text (with timestamps)
-- Searching concepts via semantic retrieval (not keyword-based)
-- Providing accurate, contextual responses powered by LLMs
-- Allowing learners to jump directly to exact lecture moments
-
-Designed to improve student learning by enabling fast discovery of relevant information.
-
----
+## 🚀 Overview
+This system helps students instantly find answers from long educational videos by:
+- Converting speech to text using Whisper ASR
+- Chunking transcripts with metadata and timestamps
+- Generating embeddings for semantic search
+- Retrieving the most relevant context to enhance LLM responses
 
 ## 🧠 Key Features
-✔ Automatic speech-to-text using **Whisper**  
-✔ Context-aware answer generation using **RAG Pipeline**  
-✔ Semantic search using **Embeddings + Vector Similarity**  
-✔ Timestamp navigation for transparent learning  
-✔ Clean UI for query interaction  
-✔ Scalable for any educational content  
+- 🎯 Semantic video-content search powered by embeddings
+- ⏱ Jump-to-timestamp for ground-truth learning
+- 🧩 Top-K contextual retrieval improves answer accuracy
+- 💡 Transparent, explainable responses suitable for academic use
+- 🔍 RAG pipeline prevents hallucinations and ensures factuality
 
----
+## 🛠️ Tech Stack
+- **Whisper ASR** — Speech-to-Text
+- **FAISS / ChromaDB** — Vector Search
+- **LLMs** — Contextual Q&A
+- **Streamlit** — User Interface
+- **Python** — Core development
+- **Google Colab** — Cloud execution environment
 
-## 🏗️ System Architecture
-
-```mermaid
-flowchart TD
-A[Video Input] --> B[Whisper Transcription]
-B --> C[Chunk + Metadata Assignment]
-C --> D[Embedding Generation]
-D --> E[Vector Store Search]
-E --> F[LLM Contextual Response Generation]
-F --> UI[User Interface]
-🛠️ Tech Stack
-Category	Tools
-ASR	OpenAI Whisper
-LLM + RAG	LangChain / Llama-based / GPT-based
-Vector Search	FAISS or ChromaDB
-Interface	Streamlit
-Dev Tools	Python, Pandas, NumPy, Joblib
-Cloud Execution	Google Colab
-
-📊 Workflow Steps
-1️⃣ Extract Audio from lecture videos
-2️⃣ Whisper Model → generate text + timestamps
-3️⃣ Chunk + Metadata Storage
-4️⃣ Embeddings Generation for semantic matching
-5️⃣ Top-k Retriever to fetch relevant lecture segments
-6️⃣ LLM Generates Final Response with citations
-
-📈 Example Use Cases
-🎯 Ask: "What is Precision and Recall?"
-🤖 AI responds with summary + timestamp to jump right into video
-📌 Improves revision speed and content accessibility
+## 🗂️ Architecture
+Video ➝ Whisper ➝ Chunking ➝ Embeddings ➝ Vector Store ➝ RAG Retrieval ➝ LLM Response
 
 
-📂 Folder Structure
-bash
-Copy code
-├── data/                     # raw & processed transcripts
-├── embeddings/               # vector DB storage
-├── notebooks/                # experimentation notebooks
-├── app/streamlit_app.py      # final deployed interface
-├── utils/                    # helper modules
-└── README.md
-💡 Future Improvements
-🔹 Multi-video indexing
-🔹 User profile-based personalization
-🔹 MCQs and quiz generation
-🔹 GPU-based inference for faster search
-🔹 Dashboard for lecture progress analytics
+## 🧪 Use Cases
+- Lecture summarization
+- Context-aware question answering
+- Timestamp navigation for quick revision
+- Assistive study tool for learners
 
-🙌 Contributors
-👤 Shrikant Bawankule
+## 📌 Result
+✔ Faster educational content discovery  
+✔ Improved comprehension with direct video evidence  
+✔ Increased accessibility for long-form learning material  
+
+## 📎 Repository
+This project was developed as part of my AI/ML learning journey in GenAI and real-world educational applications.
+
+👤 Developed by **Shrikant Bawankule**  
+🔗 LinkedIn: www.linkedin.com/in/shrikant-bawankule-210414317/  
+🐙 GitHub: https://github.com/Shrikant-Bawankule  
