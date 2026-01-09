@@ -33,14 +33,9 @@ df = joblib.load('embeddings.joblib')
 incoming_query = input("Ask a Question: ")
 question_embedding = create_embedding([incoming_query])[0] 
 
-# Find similarities of question_embedding with other embeddings
-# print(np.vstack(df['embedding'].values))
-# print(np.vstack(df['embedding']).shape)
 similarities = cosine_similarity(np.vstack(df['embedding']), [question_embedding]).flatten()
-# print(similarities)
 top_results = 5
 max_indx = similarities.argsort()[::-1][0:top_results]
-# print(max_indx)
 new_df = df.loc[max_indx] 
 # print(new_df[["title", "number", "text"]])
 
@@ -59,5 +54,3 @@ print(response)
 
 with open("response.txt", "w") as f:
     f.write(response)
-# for index, item in new_df.iterrows():
-#     print(index, item["title"], item["number"], item["text"], item["start"], item["end"])
